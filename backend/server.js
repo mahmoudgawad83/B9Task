@@ -1,9 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const db = require('./database');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const isProd = process.env.NODE_ENV === 'production';
 
 app.use(cors());
 app.use(express.json());
@@ -57,6 +59,15 @@ app.delete('/api/todos/:id', (req, res) => {
   db.prepare('DELETE FROM todos WHERE id = ?').run(id);
   res.status(204).send();
 });
+
+// Serve React frontend in production
+if (isProd) {
+  const distPath = path.join(__dirname, '../frontend/dist');
+  app.use(express.static(distPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
