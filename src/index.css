@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-100 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 bg-white hover:bg-slate-50 text-slate-700 text-sm font-medium rounded-lg border border-slate-200 transition-colors;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 bg-red-50 hover:bg-red-100 text-red-700 text-sm font-medium rounded-lg border border-red-200 transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-200;
+  }
+  .input {
+    @apply block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+  }
+  .select {
+    @apply block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white;
+  }
+  .label {
+    @apply block text-sm font-medium text-slate-700 mb-1;
+  }
+  .tab-btn {
+    @apply px-4 py-2 text-sm font-medium rounded-lg transition-colors;
+  }
+  .tab-btn-active {
+    @apply bg-white text-blue-700 shadow-sm;
+  }
+  .tab-btn-inactive {
+    @apply text-slate-600 hover:text-slate-900 hover:bg-white/60;
+  }
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
