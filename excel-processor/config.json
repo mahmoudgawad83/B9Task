@@ -1,0 +1,22 @@
+{
+  "_comment": "Edit the values below to match your Excel file and schedule.",
+
+  "InputFile":  "C:\\Data\\input.xlsx",
+  "OutputFile": "C:\\Data\\reports\\output_report.xlsx",
+  "InputSheet": "Sheet1",
+  "LogFile":    "C:\\Data\\logs\\excel_processor.log",
+
+  "ReportTitle": "Data Summary Report",
+
+  "Columns": {
+    "GroupByColumn": "Category",
+    "ValueColumn":   "Amount",
+    "DateColumn":    "Date"
+  },
+
+  "Schedule": {
+    "Frequency":  "Daily",
+    "Time":       "07:00",
+    "DayOfWeek":  "Monday"
+  }
+}
